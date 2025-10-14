@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Arif Ahmed</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        nav {
+            background: #c41e3a;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding: 0 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        h1 {
+            color: #c41e3a;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            text-align: center;
+            border-bottom: 3px solid #c41e3a;
+            padding-bottom: 0.5rem;
+        }
+
+        .intro {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            color: #555;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid #667eea;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .contact-card h3 {
+            color: #c41e3a;
+            margin-bottom: 0.8rem;
+        }
+
+        .contact-card a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            word-break: break-word;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-card p {
+            color: #555;
+        }
+
+        .form-section {
+            max-width: 600px;
+            margin: 3rem auto;
+            background: #f8f9fa;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .form-section h2 {
+            color: #c41e3a;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        form {
+            width: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 600;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            background: #667eea;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+        }
+
+        .download-resume {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .resume-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #c41e3a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .resume-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./experience.html">Experience</a></li>
+            <li><a href="./projects.html">Projects</a></li>
+            <li><a href="./dcp.html">Digital Capstone</a></li>
+            <li><a href="./interests.html">Interests</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Let's Connect</h1>
+        <p class="intro">Feel free to reach out for collaboration, feedback, or professional opportunities.</p>
+
+        <div class="contact-grid">
+            <div class="contact-card">
+                <span class="contact-icon">📧</span>
+                <h3>Email</h3>
+                <a href="mailto:arifahmed2052@gmail.com">arifahmed2052@gmail.com</a>
+            </div>
+
+            <div class="contact-card">
+                <span class="contact-icon">💼</span>
+                <h3>LinkedIn</h3>
+                <a href="https://www.linkedin.com/in/arifahmed03" target="_blank">linkedin.com/in/arifahmed03</a>
+            </div>
+
+            <div class="contact-card">
+                <span class="contact-icon">💻</span>
+                <h3>GitHub</h3>
+                <a href="https://github.com/arifahmed2052" target="_blank">github.com/arifahmed2052</a>
+            </div>
+
+            <div class="contact-card">
+                <span class="contact-icon">🌍</span>
+                <h3>Location</h3>
+                <p>New Jersey, USA</p>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2>Send Me a Message</h2>
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required placeholder="john@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required placeholder="Your message here..."></textarea>
+                </div>
+
+                <button type="submit">Send Message</button>
+            </form>
+            <p style="margin-top: 1rem; text-align: center; font-size: 0.9rem; color: #666;">
+                <em>Note: To activate this form, sign up at <a href="https://formspree.io" target="_blank" style="color: #667eea;">Formspree.io</a> and replace YOUR_FORM_ID with your actual form ID.</em>
+            </p>
+        </div>
+
+        <div class="download-resume">
+            <a href="assets/docs/Arif_Ahmed_Resume.pdf" class="resume-btn" download>📄 Download My Resume</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Arif Ahmed. Built by me.</p>
+        <p>
+            <a href="https://www.linkedin.com/in/arifahmed03" target="_blank">LinkedIn</a> · 
+            <a href="https://github.com/arifahmed2052" target="_blank">GitHub</a> · 
+            <a href="mailto:arifahmed2052@gmail.com">Email Me</a>
+        </p>
+    </footer>
+</body>
+</html>
